@@ -1,9 +1,13 @@
 .red    { --primary: #ff6b6b; }
-.green  { --primary: #51cf66; }
+.cyan   { --primary: #22d3ee; }
 .blue   { --primary: #4f6fff; }
+.green  { --primary: #51cf66; }
 .purple { --primary: #b197fc; }
 .pink   { --primary: #ff8787; }
-.cyan   { --primary: #22d3ee; }
+
+.red #clock {
+    color: var(--clock-color, #000000);
+}
 
 #body {
     --bg: #080e14;

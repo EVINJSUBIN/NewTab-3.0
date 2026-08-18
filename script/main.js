@@ -1,5 +1,5 @@
 const settings = {
-    colorScheme: "cyan",
+    colorScheme: "red",
     themeMode: "auto",
     bgType: "theme",
     bgColor: "#0f172a",
@@ -70,7 +70,7 @@ function applyTheme() {
     const body = document.getElementById("body");
     if (!body) return;
 
-    const color = settings.colorScheme || "cyan";
+    const color = settings.colorScheme || "red";
     const mode = settings.themeMode || "auto";
     const modeClass = mode === "dark" ? " dark-mode" : mode === "light" ? " light-mode" : "";
     body.className = `${color}${modeClass}`;
@@ -347,7 +347,7 @@ function initTopCustomize() {
     const clockSel = document.getElementById("clockType");
 
     if (colorSel) {
-        colorSel.value = settings.colorScheme || "cyan";
+        colorSel.value = settings.colorScheme || "red";
         colorSel.onchange = (e) => {
             set("colorScheme", e.target.value);
             applyTheme();
