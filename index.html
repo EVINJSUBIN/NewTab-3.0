@@ -4,64 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Tab</title>
-    <link rel="stylesheet" href="./style/values.css">
-    <link rel="stylesheet" href="./style/main.css">
-    <link rel="stylesheet" href="./style/shortcuts.css">
-    <link rel="stylesheet" href="./style/search.css">
-    <link rel="stylesheet" href="./style/rss-feed.css">
-    <link rel="stylesheet" href="./style/clock.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
-<body id="body" class="blue">
-    <main>
-        <h1 id="clock"></h1>
-        <h2 id="date"></h2>
-        <section id="customizeSection" style="position:fixed; top:70px; left:16px; background:rgba(0,0,0,0.3); padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
-            <div style="font-size:0.75em; color:var(--muted); margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Customize</div>
-            <div style="display:flex; gap:8px; margin-bottom:8px;">
-                <select id="colorSelect" style="padding:6px 8px; background:rgba(255,255,255,0.1); border:1px solid var(--primary-color); border-radius:4px; color:var(--text-color); font-size:0.85em; cursor:pointer;">
-                    <option value="blue">Blue</option>
-                    <option value="cyan">Cyan</option>
-                    <option value="green">Green</option>
-                    <option value="purple">Purple</option>
-                    <option value="pink">Pink</option>
-                    <option value="red">Red</option>
-                </select>
-                <select id="clockType" style="padding:6px 8px; background:rgba(255,255,255,0.1); border:1px solid var(--primary-color); border-radius:4px; color:var(--text-color); font-size:0.85em; cursor:pointer;">
-                    <option value="24h">24h</option>
-                    <option value="12h">12h</option>
-                    <option value="sec">Seconds</option>
-                    <option value="min">Minimal</option>
-                </select>
-            </div>
-        </section>
-        <div id="searchDiv">
-            <input id="search" type="text" placeholder="Search">
-            <svg id="searchIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+<body id="body" class="cyan">
+    <!-- Top-Left Customize Box -->
+    <section id="customizeSection">
+        <div class="customize-label">Customize</div>
+        <div class="customize-select-group">
+            <select id="colorSelect">
+                <option value="cyan">Cyan</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="purple">Purple</option>
+                <option value="pink">Pink</option>
+                <option value="red">Red</option>
+            </select>
+            <select id="clockType">
+                <option value="24h">24h</option>
+                <option value="12h">12h</option>
+                <option value="sec">Seconds</option>
+                <option value="min">Minimal</option>
+            </select>
         </div>
-        <div id="shortcuts"></div>
-        <section id="todoSection">
-            <h3>Quick Tasks</h3>
-            <div id="todoInput" style="display:flex; gap:8px; margin-bottom:12px;">
-                <input id="todoText" type="text" placeholder="Add a task..." style="flex:1;">
-                <button id="todoAdd" style="cursor:pointer;">+</button>
-            </div>
-            <ul id="todoList" style="list-style:none; padding:0; margin:0;"></ul>
-        </section>
-        <div id="rssFeed"></div>
-    </main>
-    <a id="editButton" href="./config">
-        <svg id="editButtonIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)">
+    </section>
+
+    <!-- Top-Right Settings Link -->
+    <a id="editButton" href="./config.html" title="Configuration Settings">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
             <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
         </svg>
     </a>
-    <script src="./script/save-settings.js"></script>
-    <script src="./script/strings.js"></script>
-    <script src="./script/color-scheme.js"></script>
-    <script src="./script/shortcuts.js"></script>
-    <script src="./script/search.js"></script>
-    <script src="./script/rss.js"></script>
-    <script src="./script/clock.js"></script>
-    <script src="./script/todo.js"></script>
-    <script src="./script/customize.js"></script>
+
+    <main>
+        <h1 id="clock"></h1>
+        <h2 id="date"></h2>
+
+        <div id="searchDiv">
+            <input id="search" type="text" placeholder="Search with DuckDuckGo">
+            <svg id="searchIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+            </svg>
+        </div>
+
+        <div id="shortcuts"></div>
+
+        <section id="todoSection">
+            <h3>Quick Tasks</h3>
+            <div id="todoInput">
+                <input id="todoText" type="text" placeholder="Add a task...">
+                <button id="todoAdd">+</button>
+            </div>
+            <ul id="todoList"></ul>
+        </section>
+
+        <div id="rssFeed"></div>
+    </main>
+
+    <script src="./script/main.js"></script>
 </body>
 </html>

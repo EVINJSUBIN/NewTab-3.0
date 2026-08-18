@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab Settings</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/config.css">
+</head>
+<body id="body" class="cyan">
+    <div class="config-container">
+        <header class="config-header">
+            <h1>Configuration & Customization</h1>
+            <a href="./index.html" class="btn-home">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor">
+                    <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+                </svg>
+                Back to Home
+            </a>
+        </header>
+
+        <main class="config-content">
+            <!-- Theme & Preset Customization -->
+            <section class="config-card">
+                <h2>Theme & Color Presets</h2>
+                
+                <div class="form-group">
+                    <label for="themeModeSelect">Mode Preset</label>
+                    <select id="themeModeSelect">
+                        <option value="auto">Auto (System Default)</option>
+                        <option value="dark">Dark Mode Preset 🌙</option>
+                        <option value="light">Light Mode Preset ☀️</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="colorSection">
+                    <label for="colorSelect">Color Theme Preset</label>
+                    <select id="colorSelect">
+                        <option value="cyan">Cyan Preset</option>
+                        <option value="blue">Blue Preset</option>
+                        <option value="green">Green Preset</option>
+                        <option value="purple">Purple Preset</option>
+                        <option value="pink">Pink Preset</option>
+                        <option value="red">Red Preset</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bgTypeSelect">Background Style</label>
+                    <select id="bgTypeSelect">
+                        <option value="theme">Theme Color Scheme</option>
+                        <option value="color">Custom Solid Color</option>
+                        <option value="image">Custom Background Image URL</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="bgPickerSection" style="display:none;">
+                    <label for="bgColorInput">Pick Background Color</label>
+                    <input type="color" id="bgColorInput" value="#0f172a">
+                </div>
+
+                <div class="form-group" id="bgImageSection" style="display:none;">
+                    <label for="bgImageInput">Background Image URL</label>
+                    <input type="url" id="bgImageInput" placeholder="https://images.unsplash.com/photo-..." style="width:100%;">
+                </div>
+            </section>
+
+            <!-- Typography & Google Fonts Section -->
+            <section class="config-card">
+                <h2>Typography & Google Fonts</h2>
+                
+                <div class="form-group">
+                    <label for="fontPresetSelect">Font Style Preset (Clock & Date)</label>
+                    <select id="fontPresetSelect">
+                        <option value="dynapuff">Playful (DynaPuff Default)</option>
+                        <option value="inter">Business (Inter)</option>
+                        <option value="pacifico">Fancy (Pacifico)</option>
+                        <option value="quicksand">Calm (Quicksand)</option>
+                        <option value="caveat">Cute (Caveat)</option>
+                        <option value="lobster">Artistic (Lobster)</option>
+                        <option value="playfair">Vintage (Playfair Display)</option>
+                        <option value="anton">Loud (Anton)</option>
+                        <option value="orbitron">Futuristic (Orbitron)</option>
+                        <option value="fredoka">Happy (Fredoka)</option>
+                        <option value="custom">Custom Google Font...</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="customFontSection" style="display:none;">
+                    <label for="customFontInput">Custom Google Font Name</label>
+                    <input type="text" id="customFontInput" placeholder="e.g. Space Grotesk, Fira Code, Poppins...">
+                </div>
+            </section>
+
+            <!-- Clock & Display Customization -->
+            <section class="config-card">
+                <h2>Clock & Display Settings</h2>
+                
+                <div class="form-group">
+                    <label for="clockTypeSelect">Clock Format</label>
+                    <select id="clockTypeSelect">
+                        <option value="24h">24 Hour (19:42)</option>
+                        <option value="12h">12 Hour (07:42 PM)</option>
+                        <option value="sec">With Seconds (19:42:30)</option>
+                        <option value="min">Minimal (19h 42m)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clockColorInput">Clock Text Color</label>
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <input type="color" id="clockColorInput" value="#ffffff">
+                        <button id="resetClockColorBtn" class="btn-delete" style="color:var(--text); border-color:var(--border); background:rgba(255,255,255,0.08);">Reset to Default</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="clockShadowTypeSelect">Clock Shadow Style</label>
+                    <select id="clockShadowTypeSelect">
+                        <option value="theme">Theme Accent Color Shadow</option>
+                        <option value="custom">Custom Shadow Color</option>
+                        <option value="none">No Shadow</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="clockShadowPickerSection" style="display:none;">
+                    <label for="clockShadowColorInput">Pick Clock Shadow Color</label>
+                    <input type="color" id="clockShadowColorInput" value="#22d3ee">
+                </div>
+
+                <div class="form-group">
+                    <label for="searchEngineSelect">Default Search Engine</label>
+                    <select id="searchEngineSelect">
+                        <option value="DuckDuckGo">DuckDuckGo</option>
+                        <option value="Google">Google</option>
+                        <option value="Ecosia">Ecosia</option>
+                        <option value="Brave">Brave</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Shortcuts Manager -->
+            <section class="config-card">
+                <h2>Manage Shortcuts</h2>
+                
+                <div class="add-shortcut-form">
+                    <input type="text" id="shortcutName" placeholder="Shortcut Name (e.g. GitHub)">
+                    <input type="text" id="shortcutUrl" placeholder="URL (e.g. https://github.com)">
+                    <button id="addShortcutBtn" class="btn-primary">+ Add Shortcut</button>
+                </div>
+
+                <div id="shortcutsList" class="shortcuts-config-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./script/main.js"></script>
+    <script src="./script/config.js"></script>
+</body>
+</html>
