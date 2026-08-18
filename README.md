@@ -63,6 +63,6 @@ i wanted to keep it super simple and lightweight, so i used zero frameworks or e
 - built for [Hack Club Stardance](https://stardance.hackclub.com/missions/nasa-page) (Give Your Website a Pulse mission)
 - DynaPuff font by Toshi Omagari
 - Google Fonts API & Dev.to Public API
-- made with ❤️ by Evin J Subin
+- made with ❤️ by EVINJSUBIN
 
-MIT License © 2026 Evin J Subin
+MIT License © 2026 EVINJSUBIN
