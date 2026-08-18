@@ -1,0 +1,43 @@
+.red {
+    --seed-color: #ff6b6b;
+}
+
+.green {
+    --seed-color: #51cf66;
+}
+
+.blue {
+    --seed-color: #4f6fff;
+}
+
+.purple {
+    --seed-color: #b197fc;
+}
+
+.pink {
+    --seed-color: #ff8787;
+}
+
+.cyan {
+    --seed-color: #22d3ee;
+}
+
+#body {
+    --background-color: hsl(from var(--seed-color) h s 90);
+    --text-color: hsl(from var(--seed-color) h s 5);
+    --primary-color: hsl(from var(--seed-color) h s calc(l + 30));
+    --primary-text-color: hsl(from var(--seed-color) h s calc(l - 10));
+    --secondary-color: hsl(from var(--seed-color) calc(h + 30) s calc(l + 30));
+    --secondary-text-color: hsl(from var(--seed-color) calc(h + 30) s calc(l - 30));
+}
+
+@media (prefers-color-scheme: dark) {
+    #body {
+        --background-color: hsl(from var(--seed-color) h s 4);
+        --text-color: hsl(from var(--seed-color) h s 95);
+        --primary-color: hsl(from var(--seed-color) h s calc(l - 10));
+        --primary-text-color: hsl(from var(--seed-color) h s calc(l + 30));
+        --secondary-color: hsl(from var(--seed-color) calc(h + 30) s calc(l - 30));
+        --secondary-text-color: hsl(from var(--seed-color) calc(h + 30) s calc(l + 30));
+    }
+}

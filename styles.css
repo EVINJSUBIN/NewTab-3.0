@@ -1,0 +1,162 @@
+.red {
+    --seed-color: red;
+}
+
+.green {
+    --seed-color: green;
+}
+
+.blue {
+    --seed-color: blue;
+}
+
+.purple {
+    --seed-color: purple;
+}
+
+#body {
+    --background-color: hsl(from var(--seed-color) h s 90);
+    --text-color: hsl(from var(--seed-color) h s 5);
+    --primary-color: hsl(from var(--seed-color) h s calc(l + 30));
+    --primary-text-color: hsl(from var(--seed-color) h s calc(l - 10));
+    --secondary-color: hsl(from var(--seed-color) calc(h + 30) s calc(l + 30));
+    --secondary-text-color: hsl(from var(--seed-color) calc(h + 30) s calc(l - 30));
+}
+
+@media (prefers-color-scheme: dark) {
+    #body {
+        --background-color: hsl(from var(--seed-color) h s 4);
+        --text-color: hsl(from var(--seed-color) h s 95);
+        --primary-color: hsl(from var(--seed-color) h s calc(l - 10));
+        --primary-text-color: hsl(from var(--seed-color) h s calc(l + 30));
+        --secondary-color: hsl(from var(--seed-color) calc(h + 30) s calc(l - 30));
+        --secondary-text-color: hsl(from var(--seed-color) calc(h + 30) s calc(l + 30));
+    }
+}
+
+@font-face {
+    font-family: DynaPuff;
+    src: url('../res/dynapuff.ttf');
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "DynaPuff", system-ui;
+    margin: 0;
+}
+
+body::selection {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: var(--primary-text-color);
+}
+
+a:hover {
+    color: var(--secondary-text-color);
+}
+
+#editButton, #homeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+#clock {
+    font-size: 10em;
+    text-shadow: 10px 10px 0 var(--primary-color);
+    margin-bottom: 0;
+}
+
+#date {
+    text-shadow: 0 0 5px var(--secondary-color);
+    margin-bottom: 100px;
+}
+
+#search {
+    border: none;
+    font-size: larger;
+    border-radius: 50px;
+    border-color: var(--text-color);
+    border-width: 1px;
+    border-style: solid;
+    background-color: transparent;
+    padding: 20px;
+    width: 100%;
+    color: var(--text-color);
+}
+
+#search:focus {
+    border-width: 2px;
+    padding: 19px;
+}
+
+#searchDiv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+#searchIcon {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+#shortcuts {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.shortcut {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#rssFeed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.35em;
+    padding: 24px;
+    margin-top: 100px;
+}
+
+.newsCard {
+    width: fit-content;
+    max-width: 30%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsDesc {
+    flex-grow: 1;
+}
+
+.newsTitle {
+    flex-grow: 1;
+}
